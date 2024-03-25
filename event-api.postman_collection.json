@@ -26,6 +26,51 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "FindById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7136/findById?id=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7136",
+					"path": [
+						"findById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7136/find/carouselParty",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7136",
+					"path": [
+						"find",
+						"carouselParty"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
