@@ -1,6 +1,7 @@
 ﻿using EventAPI.Models;
 using EventAPI.Repository.interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace EventAPI.Controllers
 {
@@ -22,8 +23,24 @@ namespace EventAPI.Controllers
         [HttpGet("")]
         public async Task<ActionResult<IEnumerable<Event>>> GetAll()
         {
-            var products = await _repository.GetAllAsync();
-            return Ok(products);
+            var events = await _repository.GetAllAsync();
+            return Ok(events);
+        }
+
+
+        [HttpGet("/findById")]
+        public async Task<ActionResult<Event>> GetById([FromQuery] int id)
+        {
+            var events = await _repository.GetByIdAsync(id);
+            return Ok(events);
+        }
+
+
+        [HttpGet("/find/{name}")]
+        public async Task<ActionResult<Event>> GetByNameRoute([FromRoute] string name)
+        {
+            var events = await _repository.GetByNameAsync(name);
+            return Ok(events);
         }
 
     }
