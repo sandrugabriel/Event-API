@@ -1,0 +1,31 @@
+{
+	"info": {
+		"_postman_id": "d96d7553-0c0f-4c9b-a283-bff1afe9f00b",
+		"name": "event-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33668461"
+	},
+	"item": [
+		{
+			"name": "GetAllEvent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7136/api/v1/event",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7136",
+					"path": [
+						"api",
+						"v1",
+						"event"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
