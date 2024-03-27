@@ -1,4 +1,5 @@
-﻿using EventAPI.Models;
+﻿using EventAPI.Dto;
+using EventAPI.Models;
 using EventAPI.Repository.interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -42,6 +43,30 @@ namespace EventAPI.Controllers
             var events = await _repository.GetByNameAsync(name);
             return Ok(events);
         }
+
+
+        [HttpPost("/create")]
+        public async Task<ActionResult<Event>> Create([FromBody] CreateRequest request)
+        {
+            var events = await _repository.Create(request);
+            return Ok(events);
+
+        }
+
+        [HttpPut("/update")]
+        public async Task<ActionResult<Event>> Update([FromQuery] int id, [FromBody] UpdateRequest request)
+        {
+            var events = await _repository.Update(id, request);
+            return Ok(events);
+        }
+
+        [HttpDelete("/deleteById")]
+        public async Task<ActionResult<Event>> DeleteCarById([FromQuery] int id)
+        {
+            var events = await _repository.DeleteById(id);
+            return Ok(events);
+        }
+
 
     }
 }
