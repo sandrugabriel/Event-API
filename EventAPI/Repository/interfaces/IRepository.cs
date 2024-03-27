@@ -1,4 +1,5 @@
-﻿using EventAPI.Models;
+﻿using EventAPI.Dto;
+using EventAPI.Models;
 using System;
 
 namespace EventAPI.Repository.interfaces
@@ -10,5 +11,13 @@ namespace EventAPI.Repository.interfaces
         Task<Event> GetByNameAsync(string name);
 
         Task<Event> GetByIdAsync(int id);
+
+
+        Task<Event> Create(CreateRequest request);
+
+        Task<Event> Update(int id, UpdateRequest request);
+
+        Task<Event> DeleteById(int id);
+
     }
 }
