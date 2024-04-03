@@ -1,6 +1,8 @@
 using EventAPI.Data;
 using EventAPI.Repository;
 using EventAPI.Repository.interfaces;
+using EventAPI.Service;
+using EventAPI.Service.intefaces;
 using FluentMigrator.Runner;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +15,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IRepository, ReposirotyEvent>();
+builder.Services.AddScoped<IQueryService, QueryService>();
+builder.Services.AddScoped<ICommandService, CommandService>();
 
 builder.Services.AddDbContext<AppDbContext>(option => option.UseMySql(builder.Configuration.GetConnectionString("Default")!,
     new MySqlServerVersion(new Version(8, 0, 6))));
