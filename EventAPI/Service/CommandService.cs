@@ -56,7 +56,7 @@ namespace EventAPI.Service
             {
                 throw new ItemDoesNotExist(Constants.Constants.ItemDoesNotExist);
             }
-            events = await _repository.DeleteById(id);
+            await _repository.DeleteById(id);
             return events;
         }
 
