@@ -40,7 +40,7 @@ namespace EventAPI.Service
             }
 
 
-            if (events.Location == "")
+            if (request.Location == "")
             {
                 throw new InvalidLocation(Constants.Constants.InvalidLocation);
             }
